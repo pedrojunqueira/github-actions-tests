@@ -18,5 +18,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   
   Calls-workflow:
-    uses: ./github/workflows/learn-github-actions.yml
+    uses: ./.github/workflows/learn-github-actions.yml
     needs: Explore-GitHub-Actions
