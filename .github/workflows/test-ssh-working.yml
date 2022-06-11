@@ -1,0 +1,17 @@
+name: learn-github-actions
+on: [push]
+
+jobs:
+  deploy-application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: run command
+        run: |
+          ssh "${{ secrets.USER_NAME }}"@"${{ secrets.HOST }}"
+          pwd
