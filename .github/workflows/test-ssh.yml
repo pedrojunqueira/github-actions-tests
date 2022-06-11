@@ -1,13 +1,18 @@
-name: learn-github-actions
-on: workflow_call
+name: connect linode
+on:
+  push:
 
 jobs:
-  deploy-application:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+      - uses: actions/checkout@v2
+      - name: ls of linode container
+        uses: appleboy/ssh-action@master
         with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          name: id_rsa
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ls -l
