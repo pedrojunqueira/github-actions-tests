@@ -1,5 +1,5 @@
 name: learn-github-actions
-on: [push]
+on: workflow_call
 
 jobs:
   deploy-application:
@@ -11,7 +11,3 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      - name: run command
-        run: whoami
-        run: touch file
-        run: echo some_data > file
