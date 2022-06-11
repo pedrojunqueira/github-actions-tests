@@ -1,6 +1,5 @@
 name: connect linode
-on:
-  push:
+on: workflow_call
 
 jobs:
   build:
