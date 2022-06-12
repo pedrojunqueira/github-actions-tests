@@ -6,4 +6,7 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: executing remote ssh commands using ssh key
-        run: pwd
+        run: |
+        cd ~
+        ./re-deploy.sh
+
