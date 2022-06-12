@@ -13,5 +13,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            ls -la
+            ./re-deploy.sh
