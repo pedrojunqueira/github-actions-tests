@@ -7,6 +7,5 @@ jobs:
     steps:
       - name: executing remote ssh commands using ssh key
         run: |
-        cd ~
-        ./re-deploy.sh
-
+          cd ~
+          ./re-deploy.sh
