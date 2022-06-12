@@ -1,4 +1,4 @@
-name: remote ssh command
+name: re-deploy application
 on: [push]
 jobs:
   build:
