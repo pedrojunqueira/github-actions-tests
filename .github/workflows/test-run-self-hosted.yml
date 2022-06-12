@@ -6,11 +6,4 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            ./re-deploy.sh
+        run: ./re-deploy.sh
